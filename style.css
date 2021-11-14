@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*Positioning the SVG and setting its size for responsiveness*/
+svg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vmin;
+  height: 100vmin;
+}
+
+/*Changing the color and transforming one tree's canopy*/
+#small-tree-canopy_3,
+#small-tree-canopy_4 {
+  transition: all 10ms ease-in-out;
+}
+#small-tree-canopy_3:active {
+  transform: skewY(-0.3deg);
+}
+#small-tree-canopy_4:active {
+  transform: skewY(-0.3deg);
+}
+
+#small-tree-canopy_3:active {
+  fill: #8784a3;
+}
+
+#small-tree-canopy_4:active {
+  fill: #8784a3;
+}
+
+/*Animating the animal*/
+#left-front-leg,
+#left-back-leg {
+  animation: left-front-leg 1s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation-direction: alternate;
+}
+
+@keyframes left-front-leg {
+  from {
+    transform: rotate(-40deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}
+
+#right-front-leg,
+#right-back-leg {
+  animation: right-front-leg 1s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation-direction: alternate;
+}
+
+@keyframes right-front-leg {
+  from {
+    transform: rotate(40deg);
+  }
+  to {
+    transform: rotate(-40deg);
+  }
+}
+
+#body,
+#tail,
+#head,
+#mouth,
+#left-ear,
+#right-ear,
+#nose {
+  animation: up-down 500ms ease-in-out infinite alternate;
+}
+@keyframes up-down {
+  from {
+    tansform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(10deg);
+  }
+}
+
+/*Animating the trees*/
+#short-small-tree,
+#big-tree,
+#tall-small-tree {
+  animation: big-tree 18s linear -10s infinite;
+}
+
+@keyframes big-tree {
+  0% {
+    transform: translateX(750px);
+  }
+  100% {
+    transform: translateX(-750px);
+  }
+}
+
+#short-small-tree2,
+#big-tree2,
+#tall-small-tree2 {
+  animation: big-tree 18s linear infinite;
+}
+
+@keyframes big-tree {
+  0% {
+    transform: translateX(1000px);
+  }
+  100% {
+    transform: translateX(-800px);
+  }
+}
